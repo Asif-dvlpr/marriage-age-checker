@@ -1,16 +1,88 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Marriage Age Checker</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 30px 40px;
+      border-radius: 20px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(10px);
+      text-align: center;
+      width: 90%;
+      max-width: 400px;
+    }
+
+    .container h2 {
+      margin-bottom: 20px;
+      font-size: 26px;
+      color: #00ffe1;
+    }
+
+    input[type="text"],
+    input[type="number"] {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 10px;
+      background: #ffffff11;
+      color: white;
+      font-size: 16px;
+    }
+
+    input::placeholder {
+      color: #ccc;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 10px;
+      background: #00ffe1;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: bold;
+      color: #003333;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #00ddc2;
+    }
+
+    #result {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #ffffffdd;
+    }
+  </style>
 </head>
-<body style="font-family: Arial; text-align: center;">
-  <h2>Marriage Age Checker</h2>
-  <input type="text" id="name" placeholder="Enter your name" /><br><br>
-  <input type="number" id="age" placeholder="Enter your age" /><br><br>
-  <input type="text" id="gender" placeholder="Enter your gender" /><br><br>
-  <button onclick="checkMarriageAge()">Check</button><br><br>
-  <p id="result"></p>
+<body>
+  <div class="container">
+    <h2>💍 Marriage Age Checker</h2>
+    <input type="text" id="name" placeholder="Enter your name" />
+    <input type="number" id="age" placeholder="Enter your age" />
+    <input type="text" id="gender" placeholder="Enter your gender" />
+    <button onclick="checkMarriageAge()">Check</button>
+    <p id="result"></p>
+  </div>
 
   <script>
     function marrigeagechacker(name = "Asif", age = 21, gender = "male") {
@@ -27,13 +99,13 @@
       }
 
       if (age >= marrigeage) {
-        return `Hi ${name}. Tomar biyer boyos hoyeche😲. Tumi ${
+        return `Hi ${name}. Tomar biyer boyos hoyeche 😲 Tumi ${
           age - marrigeage
         } bochor jabot opekka korcho...`;
       } else {
-        return `Hi ${name}. Tomar biyer boyos hoi nai. Tumi aro ${
+        return `Hi ${name}. Tomar biyer boyos hoi nai 😓 Tumi aro ${
           marrigeage - age
-        } bochor opekka koro...😓`;
+        } bochor opekka koro...`;
       }
     }
 
