@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Marriage Age Checker</title>
+</head>
+<body style="font-family: Arial; text-align: center;">
+  <h2>Marriage Age Checker</h2>
+  <input type="text" id="name" placeholder="Enter your name" /><br><br>
+  <input type="number" id="age" placeholder="Enter your age" /><br><br>
+  <input type="text" id="gender" placeholder="Enter your gender" /><br><br>
+  <button onclick="checkMarriageAge()">Check</button><br><br>
+  <p id="result"></p>
+
+  <script>
+    function marrigeagechacker(name = "Asif", age = 21, gender = "male") {
+      let marrigeage = 0;
+      switch (gender.toLowerCase()) {
+        case "male":
+          marrigeage = 21;
+          break;
+        case "female":
+          marrigeage = 18;
+          break;
+        default:
+          return `Hi ${name}, gender "${gender}" is not recognized.`;
+      }
+
+      if (age >= marrigeage) {
+        return `Hi ${name}. Tomar biyer boyos hoyeche😲. Tumi ${
+          age - marrigeage
+        } bochor jabot opekka korcho...`;
+      } else {
+        return `Hi ${name}. Tomar biyer boyos hoi nai. Tumi aro ${
+          marrigeage - age
+        } bochor opekka koro...😓`;
+      }
+    }
+
+    function checkMarriageAge() {
+      let name = document.getElementById("name").value;
+      let age = parseInt(document.getElementById("age").value);
+      let gender = document.getElementById("gender").value;
+
+      document.getElementById("result").innerText = marrigeagechacker(name, age, gender);
+    }
+  </script>
+</body>
+</html>
